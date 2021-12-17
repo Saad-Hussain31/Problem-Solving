@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node {
+public:
+	int data;
+	Node *next;
+};
+
+void printList(Node *n) {
+	while (n != NULL) {
+	cout << n->data << "\n" ;
+	n = n->next;
+	}
+}
+
+void printValueAt(Node *n) {
+	while (n!= NULL) {
+	cout << &n << "\n";
+	n = n->next;
+	}
+}
+
+
+int main() {
+
+	Node *head = NULL;
+	Node *sec = NULL;
+	Node *thd = NULL;
+
+	head = new Node();
+	sec = new Node();
+	thd  = new Node();
+
+	head->data = 1;
+	head->next = sec;
+
+	sec->data = 2;
+	sec->next = thd;
+	
+	thd->data  = 3;
+	thd->next  = NULL;
+	
+	printList(head);
+	printValueAt(head);
+	return 0;
+}
+	
